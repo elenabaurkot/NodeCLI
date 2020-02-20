@@ -27,4 +27,4 @@ class Employee {
 
 // will.name
 
-module.exports = Employee
+module.exports = Employee;
