@@ -10,7 +10,7 @@ inquirer
         
     })
 
-// going to need prompts that at the end write to team.html under outputs
+// The project must generate a `team.html` page in the `output` directory, that displays a nicely formatted team roster
 
 // going to need switch case based on which type of employee the user selects 
 

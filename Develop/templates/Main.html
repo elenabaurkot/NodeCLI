@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Main</title>
     <!-- Bootstrap link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
 
 <!-- Jumbotron header -->
 <div class="jumbotron jumbotron-fluid" style="background-color: rgb(7, 96, 128); color: white;">
     <div class="container" style="display: block; height: 50px;">
-      <h1 class="display-1" style="margin: auto; margin-left: 30%; position: absolute;letter-spacing: 3px; font-weight: 400;">My Team</h1>
+      <h2 class="display-3" style="text-align: center;">My Team</h2>
     </div>
 </div>
 
 <!-- div with placeholder for formatted team info  -->
 <div class="container">
     <span style="text-align: center;">
-        <h1 placeholder="{{ team }}"></h1>
+        <!-- <h1 placeholder="{{ team }}"></h1> -->
+        <h1>{{ team }}</h1>
+        <!-- <input type="text" placeholder="{{ team }}"> -->
     </span>
+
+</div>
     
 </body>
 </html>
-
