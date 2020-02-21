@@ -1,3 +1,25 @@
 var fs = require("fs");
 var inquirer = require("inquirer");
 
+
+inquirer
+    .prompt([
+
+    ])
+    .then (answers => {
+        
+    })
+
+// going to need prompts that at the end write to team.html under outputs
+
+// going to need switch case based on which type of employee the user selects 
+
+// need to create html templates for each user 
+
+// the main should have all of the code 
+
+// handlebars with spaces for placeholders
+
+//  In your HTML template files, you may want to add a placeholder character that helps your program identify where the dynamic markup begins and ends.
+
+// The project must prompt the user to build an engineering team. An engineering team consists of a manager, and any number of engineers and interns.
