@@ -30,13 +30,16 @@ managerInfo => {
         name: "officeNumber"
       }
     ]).then(response=> {
-      
+        const manager = new Manager(respone.name, response.id, response.email, response.officeNumber)
+        employees.push(manager);
+
+        makeTeam();
     })
 };
 
 managerInfo();
 
-
+makeTeam => {
 inquirer
   .prompt([
     {
@@ -62,7 +65,7 @@ inquirer
             break;
       }
     })
-  
+}
     // make functions for each diff employee type and .then construct new employee and push to array
     // make function to end the whole thing adn write to team.html under output
 
@@ -90,7 +93,10 @@ inquirer
             name: "github"
           }
         ]).then(response=> {
+          const engineer = new Engineer(respone.name, response.id, response.email, response.github)
+          employees.push(engineer);
 
+          makeTeam();
         })
     }
 
@@ -118,13 +124,17 @@ inquirer
             name: "school"
           }
         ]).then(response=> {
+          const intern = new Intern(respone.name, response.id, response.email, response.school)
+          employees.push(intern);
 
+          makeTeam();
         })
     }
 
     teamEnd => {
       fs.writeFile(
-        "team.html",
+        '../output/team.html',
+        // "team.html",
           // `Whatever you're writing to it goes here`,
         function(err) {
           if (err) {
@@ -133,14 +143,4 @@ inquirer
           console.log("Success!");
         }
       );
-      }
-    
-
-
-// The project must generate a `team.html` page in the `output` directory, that displays a nicely formatted team roster
-
-// going to need switch case based on which type of employee the user selects
-
-//  In your HTML template files, you may want to add a placeholder character that helps your program identify where the dynamic markup begins and ends.???
-
-// The project must prompt the user to build an engineering team. An engineering team consists of a manager, and any number of engineers and interns.
+      };
