@@ -140,10 +140,8 @@ inquirer
 
     function teamEnd(){
       fs.writeFile(
-        // '../output/team.html', process.argv[2],
-        'team.html', render(employees),
-        // "team.html",
-          // `Whatever you're writing to it goes here`,
+          __dirname + '/Develop/output/team.html', render(employees),
+          
         function(err) {
           if (err) {
             return console.log(err);
@@ -152,21 +150,4 @@ inquirer
         }
       );
       };
-
-
-      // .then(function(data) {
-
-      //   var filename = data.name.toLowerCase().split(' ').join('') + ".json";
-      
-      //   fs.writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
-      
-      //     if (err) {
-      //       return console.log(err);
-      //     }
-      
-      //     console.log("Success!");
-      
-      //   });
-      // });
-
       
