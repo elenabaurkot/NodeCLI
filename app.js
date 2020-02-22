@@ -1,14 +1,19 @@
 var fs = require("fs");
 var inquirer = require("inquirer");
-const Manager  = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern   = require("./lib/Intern");
-const render   = require("./lib/htmlRenderer");
+const Manager  = require("./Develop/lib/Manager");
+const Engineer = require("./Develop/lib/Engineer");
+const Intern   = require("./Develop/lib/Intern");
+const render   = require("./Develop/lib/htmlRenderer");
 const employees = [];
 
-managerInfo => {
+function managerInfo(){
   inquirer
     .prompt([
+      {
+        type: "confirm",
+        message: "Let's build your software engineering team",
+        name: "build"
+      },
       {
         type: "input",
         message: "What is your name?",
@@ -30,16 +35,17 @@ managerInfo => {
         name: "officeNumber"
       }
     ]).then(response=> {
-        const manager = new Manager(respone.name, response.id, response.email, response.officeNumber)
+        const manager = new Manager(response.name, response.id, response.email, response.officeNumber)
         employees.push(manager);
 
         makeTeam();
     })
+    
 };
 
 managerInfo();
 
-makeTeam => {
+function makeTeam() {
 inquirer
   .prompt([
     {
@@ -61,6 +67,7 @@ inquirer
             internInfo();
             break;
         case 'No more team members': 
+            console.log(employees);
             teamEnd();
             break;
       }
@@ -69,7 +76,7 @@ inquirer
     // make functions for each diff employee type and .then construct new employee and push to array
     // make function to end the whole thing adn write to team.html under output
 
-    engineerInfo => {
+    function engineerInfo(){
       inquirer
         .prompt([
           {
@@ -93,14 +100,14 @@ inquirer
             name: "github"
           }
         ]).then(response=> {
-          const engineer = new Engineer(respone.name, response.id, response.email, response.github)
+          const engineer = new Engineer(response.name, response.id, response.email, response.github)
           employees.push(engineer);
 
           makeTeam();
         })
     }
 
-    internInfo => {
+    function internInfo() {
       inquirer
         .prompt([
           {
@@ -124,16 +131,17 @@ inquirer
             name: "school"
           }
         ]).then(response=> {
-          const intern = new Intern(respone.name, response.id, response.email, response.school)
+          const intern = new Intern(response.name, response.id, response.email, response.school)
           employees.push(intern);
 
           makeTeam();
         })
     }
 
-    teamEnd => {
+    function teamEnd(){
       fs.writeFile(
-        '../output/team.html',
+        // '../output/team.html', process.argv[2],
+        'team.html', render(employees),
         // "team.html",
           // `Whatever you're writing to it goes here`,
         function(err) {
@@ -144,3 +152,21 @@ inquirer
         }
       );
       };
+
+
+      // .then(function(data) {
+
+      //   var filename = data.name.toLowerCase().split(' ').join('') + ".json";
+      
+      //   fs.writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
+      
+      //     if (err) {
+      //       return console.log(err);
+      //     }
+      
+      //     console.log("Success!");
+      
+      //   });
+      // });
+
+      

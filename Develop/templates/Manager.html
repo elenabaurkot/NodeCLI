@@ -1,16 +1,16 @@
 <div
   class="card"
-  style="max-width:16em; text-align: center; border-color: rgb(182, 178, 178);"
+  style="width:250px; text-align: center; border-color: rgb(182, 178, 178); margin: 50px; display: inline-block;"
 >
-  <div class="card-header" style="border-color: rgb(182, 178, 178);">
-    <h5 class="card-title">{{ name }}</h5>
+  <div class="card-header" style="border-color: rgb(182, 178, 178); line-height: 6px; padding-top: 25px;">
+    <h4 class="card-title">{{ name }}</h4>
     <i
-      class="fas fa-mug-hot"
+      class="fas fa-user-graduate"
       style="font-size: 22px; padding-right: 5px; display: inline-block;"
     ></i>
-    <h6 style="display:inline-block;">{{ role }}</h6>
+    <h5 style="display:inline-block;">{{ role }}</h5>
   </div>
-  <div class="card-body">
+  <div class="card-body" style="font-size: 16px;">
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID # {{ id }}</li>
       <li class="list-group-item">{{ email }}</li>
