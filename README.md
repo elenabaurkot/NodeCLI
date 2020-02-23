@@ -1,7 +1,7 @@
 # Software Engineering Team Generator
  This program is meant for the use of a manager at a software engineering company. It allows a manager to create a team page displaying the different employees, their names, role and useful company information. The program exemplifies test-driven development as prewritten tests were used to create the code. 
 
- <!-- ![projectGif](./assets/readMe.gif) -->
+ ![projectGif](./Develop/assets/teamGenerator.gif)
 
 ## Table of Contents
 <ol>
@@ -28,7 +28,7 @@
 
 ## Contributing 
 <a name="contributing"></a>
- If you would like to contribute feel free to clone the link and edit as you please: git@github.com:elenabaurkot/readMe.git
+ If you would like to contribute feel free to clone the link and edit as you please: git@github.com:elenabaurkot/NodeCLI.git
 <br>
 <br>
 Github email: Elenabaurkot@gmail.com <br>
