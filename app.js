@@ -22,17 +22,39 @@ function managerInfo(){
       {
         type: "input",
         message: "What is your ID number?",
-        name: "id"
+        name: "id",
+        validate: function(value) {
+          var valid = !isNaN(parseFloat(value));
+          return valid || 'Please enter a number';
+        },
       },
       {
         type: "input",
         message: "What is your email?",
-        name: "email"
+        name: "email", 
+        validate: function(value) {
+         var pass = value.match
+         (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+         if (pass) {
+            return true;
+          }
+            return 'Please enter a valid email address'   
+        },
       },
       {
         type: "input",
         message: "What is your office number?",
-        name: "officeNumber"
+        name: "officeNumber",
+        validate: function(value) {
+          var pass = value.match(
+            /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
+          );
+          if (pass) {
+            return true;
+          }
+    
+          return 'Please enter a valid phone number';
+        }
       }
     ]).then(response=> {
         const manager = new Manager(response.name, response.id, response.email, response.officeNumber)
@@ -87,12 +109,24 @@ inquirer
           {
             type: "input",
             message: "What is their ID number?",
-            name: "id"
+            name: "id",
+            validate: function(value) {
+              var valid = !isNaN(parseFloat(value));
+              return valid || 'Please enter a number';
+            },
           },
           {
             type: "input",
             message: "What is their email?",
-            name: "email"
+            name: "email", 
+            validate: function(value) {
+             var pass = value.match
+             (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+             if (pass) {
+                return true;
+              }
+                return 'Please enter a valid email address'   
+            },
           },
           {
             type: "input",
@@ -118,12 +152,24 @@ inquirer
           {
             type: "input",
             message: "What is their ID number?",
-            name: "id"
+            name: "id",
+            validate: function(value) {
+              var valid = !isNaN(parseFloat(value));
+              return valid || 'Please enter a number';
+            },
           },
           {
             type: "input",
             message: "What is their email?",
-            name: "email"
+            name: "email", 
+            validate: function(value) {
+             var pass = value.match
+             (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+             if (pass) {
+                return true;
+              }
+                return 'Please enter a valid email address'   
+            },
           },
           {
             type: "input",
